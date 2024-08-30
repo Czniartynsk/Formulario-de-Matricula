@@ -1,0 +1,26 @@
+label {
+  font: var(--text-sm);
+  color: var(--text-secondary);
+}
+
+input, select, textarea {
+  /* para retirar a setinha, "o estilo" do input */
+  appearance: none;
+  width: 100%;
+  border-radius: .5rem;
+  border: 1px solid var(--stroke-default);
+  
+  padding: .75rem 1rem;
+  margin-top: .25rem;
+
+  font: var(--text);
+}
+
+input:focus, select:focus, textarea:focus {
+  border: 1px solid var(--stroke-highlight);
+  /* a borda não aparece no safari, para corrigir isso, a linha abaixo */
+  outline-offset: .1px;
+
+  /* sombra em ao redor da borda */
+  outline: .25rem solid var(--surface-secondary);
+}
