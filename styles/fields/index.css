@@ -3,34 +3,40 @@
 label {
   font: var(--text-sm);
   color: var(--text-secondary);
-  
+
   display: block;
-  margin-bottom: .25rem;
+  margin-bottom: 0.25rem;
 }
 
-input, select, textarea {
+input,
+select,
+textarea {
   /* para retirar a setinha, "o estilo" do input */
   appearance: none;
   width: 100%;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   border: 1px solid var(--stroke-default);
-  
-  padding: .75rem 1rem;
+
+  padding: 0.75rem 1rem;
 
   font: var(--text);
 }
 
-input:focus, select:focus, textarea:focus, input[type="date"]:focus-within {
+input:focus,
+select:focus,
+textarea:focus,
+input[type="date"]:focus-within {
   border: 1px solid var(--stroke-highlight);
   /* a borda não aparece no safari, para corrigir isso, a linha abaixo */
-  outline-offset: .1px;
+  outline-offset: 0.1px;
 
   /* sombra em ao redor da borda */
-  outline: .25rem solid var(--surface-secondary);
+  outline: 0.25rem solid var(--surface-secondary);
 }
 
 input[type="date"] {
   position: relative;
+  /* color: var(--text-secondary); */
 
   /* seletor do icone de calendário no input de date */
   &::-webkit-calendar-picker-indicator {
@@ -42,10 +48,10 @@ input[type="date"] {
     content: "";
     position: absolute;
     background: url(../../assets/icons/calendar-03.svg) center/contain;
-    
+
     width: 1.25rem;
     height: 1.25rem;
-    
+
     top: 50%;
     transform: translateY(-50%);
     right: 1rem;
@@ -53,5 +59,22 @@ input[type="date"] {
 }
 
 select {
-  background: url(../../assets/icons/arrow-down-01.svg) no-repeat calc(100% - 1rem);
+  background: url(../../assets/icons/arrow-down-01.svg) no-repeat
+    calc(100% - 1rem);
+
+  /* color: var(--text-secondary); */
+}
+
+.address .flex {
+  gap: 1.25rem;
+}
+
+.input-wrapper:has([disabled]) {
+  opacity: .5;
+}
+
+input {
+  &[disabled] {
+    background-color: var(--surface-disabled);
+  }
 }
