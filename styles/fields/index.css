@@ -24,3 +24,30 @@ input:focus, select:focus, textarea:focus {
   /* sombra em ao redor da borda */
   outline: .25rem solid var(--surface-secondary);
 }
+
+input[type="date"] {
+  position: relative;
+
+  /* seletor do icone de calendário no input de date */
+  &::-webkit-calendar-picker-indicator {
+    /* Não retira com o none, apenas deixa invisível pra não perder a funcionalidade */
+    opacity: 0;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    background: url(../../assets/icons/calendar-03.svg) center/contain;
+    
+    width: 1.25rem;
+    height: 1.25rem;
+    
+    top: 50%;
+    transform: translateY(-50%);
+    right: 1rem;
+  }
+}
+
+select {
+  background: url(../../assets/icons/arrow-down-01.svg) no-repeat calc(100% - 1rem);
+}
