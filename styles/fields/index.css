@@ -77,4 +77,31 @@ input {
   &[disabled] {
     background-color: var(--surface-disabled);
   }
+
+  /* Varifica quando o campo está invalidade por conta do required que foi colocado */
+  &:invalid {
+    border: 0.125rem solid var(--semantic-error);
+  }
+
+  & + small {
+    font: var(--text-sm);
+    color: #78716C;
+    display: inline-block;
+    margin-top: .25rem;
+  }
+
+  &[required] + .error {
+    display: flex;
+    align-items: center;
+    margin-top: 0.25rem;
+    gap: 0.25rem;
+
+    font: var(--text-sm);
+    color: var(--semantic-error);
+  }
+
+  /* Se o input não estiver em foco (digitando) e o campo estiver validado, sumir a mensagem de erro */
+  &:not(:focus):valid + .error {
+    display: none;
+  }
 }
